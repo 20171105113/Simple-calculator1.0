@@ -98,6 +98,10 @@ class ViewController: UIViewController {
     @IBAction func Button9(_ sender: Any) {
         Display.text = Display.text!+"9"
     }
+    @IBAction func Button12(_ sender: Any) {
+        temp = Double(Display.text!)!
+        sum = (sqrt(Double(Display.text!)!))
+    }
     
     @IBAction func Buutonadd(_ sender: Any) {
         temp = Double(Display.text!)!
