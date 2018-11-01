@@ -57,6 +57,9 @@ class ViewController: UIViewController {
             isYellow = true
         }
     }
+    @IBAction func Buttonf(_ sender: Any) {
+        Display.text = Display.text!+"-"
+    }
     @IBAction func Buttono(_ sender: Any) {
         Display.text = Display.text!+"."
     }
@@ -101,8 +104,15 @@ class ViewController: UIViewController {
     @IBAction func Button12(_ sender: Any) {
         temp = Double(Display.text!)!
         sum = (sqrt(Double(Display.text!)!))
+        Display.text = "\(sum)"
     }
     
+    @IBAction func Buttonb(_ sender: Any) {
+        temp = Double(Display.text!)!
+        sum = (Double(Display.text!)!/100)
+        Display.text = "\(sum)"
+        
+    }
     @IBAction func Buutonadd(_ sender: Any) {
         temp = Double(Display.text!)!
         Display.text = ""
