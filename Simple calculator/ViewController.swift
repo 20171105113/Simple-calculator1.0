@@ -17,16 +17,20 @@ class ViewController: UIViewController {
     var t1:Bool = false
     var isBlack:Bool = false
     var t2:Bool = false
+    var istopcolor:Bool = false
+    @IBOutlet weak var TopView1: UIImageView!
     @IBAction func Change2(_ sender: Any) {
         if(isBlack){
             self.view.backgroundColor = UIColor.white
+            self.TopView1.backgroundColor = UIColor.blue
             isBlack = false
             t1 = true
             t2 = false
             
         }
         else{
-            self.view.backgroundColor = UIColor.black
+            self.view.backgroundColor = UIColor.gray
+            self.TopView1.backgroundColor = UIColor.gray
             isBlack = true
             t1 = false
             t2 = true
@@ -161,6 +165,4 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var sun1: UILabel!
     @IBOutlet weak var moon1: UILabel!
-    
-    @IBOutlet weak var pic: UIImageView!
-}
+    }
