@@ -18,6 +18,8 @@ class ViewController: UIViewController {
     var isBlack:Bool = false
     var t2:Bool = false
     var istopcolor:Bool = false
+    var operatortemp:Int = 0
+    var texttemp:String = ""
     @IBOutlet weak var TopView1: UIImageView!
     @IBAction func Change2(_ sender: Any) {
         if(isBlack){
@@ -73,6 +75,7 @@ class ViewController: UIViewController {
     
     @IBAction func Button1(_ sender: Any) {
         Display.text = Display.text!+"1"
+        
     }
     
     @IBAction func Button2(_ sender: Any) {
@@ -121,29 +124,48 @@ class ViewController: UIViewController {
         temp = Double(Display.text!)!
         Display.text = ""
         flag = 1
+        sum = sum + temp
+        if operatortemp >= 1 {
+            
+            let sum3 = String(format: "%.2f", Double(sum))
+            _ = Double(sum3)
+            Display.text = "\(sum3)"
+        }
+        operatortemp = operatortemp + 1
+        temp = 0
     }
     
     @IBAction func Buttonreduce(_ sender: Any) {
         temp = Double(Display.text!)!
         Display.text = ""
         flag = 2
+        sum = sum - temp
+        if operatortemp >= 1 {
+            let sum3 = String(format: "%.2f", Double(sum))
+            _ = Double(sum3)
+            Display.text = "\(sum3)"
+        }
+        operatortemp = operatortemp + 1
+        temp = 0
     }
     
     @IBAction func Buttonride(_ sender: Any) {
         temp = Double(Display.text!)!
         Display.text = ""
         flag = 3
+        operatortemp = operatortemp + 1
     }
     
     @IBAction func Buttonexecpt(_ sender: Any) {
         temp = Double(Display.text!)!
         Display.text = ""
         flag = 4
+        operatortemp = operatortemp + 1
     }
     
     @IBAction func Buttoncalculate(_ sender: Any) {
         if flag == 1{
-        sum = temp + Double(Display.text!)!
+        sum = sum + temp
         }
         else if flag == 2 {
         sum = temp - Double(Display.text!)!
@@ -161,6 +183,7 @@ class ViewController: UIViewController {
     
     @IBAction func Clear(_ sender: Any) {
         Display.text = ""
+        sum = 0
     }
 
     @IBOutlet weak var sun1: UILabel!
